@@ -136,6 +136,7 @@ export default function Game() {
   });
   return (
     <>
+      <h2 style={{ backgroundColor: "pink", padding: "5px" }}>SECTION 4</h2>
       <div className="game">
         <div className="game-board">
           <Board
