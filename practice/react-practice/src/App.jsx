@@ -4,6 +4,7 @@ import Section from "./components/Section";
 import TicTacToe from "./components/TicTacToe";
 import Game from "./components/Game";
 import ManageState from "./components/ManageState";
+import SynchronizeEffect from "./components/SynchronizeEffect";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <TicTacToe />
       <Game />
       <ManageState />
+      <SynchronizeEffect />
     </>
   );
 }
