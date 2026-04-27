@@ -22,6 +22,9 @@ export default function SynchronizeEffect() {
     }; // return a cleanup function from your Effect
   }, []);
 
+  // Subscribing to events
+  // If your Effect subscribes to something,
+  // the cleanup function should unsubscribe
   useEffect(() => {
     const handleScroll = (e) => {
       console.log(window.scrollX, window.scrollY);
