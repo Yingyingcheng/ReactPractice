@@ -64,7 +64,9 @@ export default function TicTacToe() {
   }
   return (
     <>
-      <h2 style={{ backgroundColor: "pink", padding: "5px" }}>SECTION 3</h2>
+      <h2 style={{ backgroundColor: "pink", padding: "5px" }}>
+        SECTION 3-1: TicTacToe
+      </h2>
       <div className="status">{status}</div>
       <div className="board-row">
         {/* () => handleClick(i) is an arrow function */}

@@ -35,7 +35,9 @@ export default function Section() {
   }
   return (
     <>
-      <h2 style={{ backgroundColor: "pink", padding: "5px" }}>SECTION 1</h2>
+      <h2 style={{ backgroundColor: "pink", padding: "5px" }}>
+        SECTION 1: Basic
+      </h2>
       <h3> {user.name} </h3>
       <img
         className="avatar"
@@ -47,7 +49,9 @@ export default function Section() {
         }}
       />
       <ul>{productList}</ul>
-      <h2 style={{ backgroundColor: "pink", padding: "5px" }}>SECTION 2</h2>
+      <h2 style={{ backgroundColor: "pink", padding: "5px" }}>
+        SECTION 2: Counter{" "}
+      </h2>
       <h3>Counters that update together</h3>
       {/* pass the state down from MyApp to each MyButton, together with the shared click handler. */}
       {/* MyApp component contains the count state and the handleClick event handler
