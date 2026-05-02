@@ -1,14 +1,18 @@
 import { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 interface TodoItem {
   id: string;
   text: string;
   completed: boolean;
+  date: Date | null;
 }
 
 const TodoApp = () => {
   const [todos, setTodos] = useState<TodoItem[]>([]);
   const [newTodo, setNewTodo] = useState("");
+  const [dueDate, setDueDate] = useState<Date | null>(new Date());
 
   const addTask = () => {
     if (newTodo) {
@@ -17,6 +21,7 @@ const TodoApp = () => {
         id: newId,
         text: newTodo,
         completed: false,
+        date: dueDate,
       };
       setTodos([...todos, newTodoItem]);
       setNewTodo("");
@@ -46,6 +51,12 @@ const TodoApp = () => {
         value={newTodo}
         onChange={(e) => setNewTodo(e.target.value)}
       />
+      <div>
+        <DatePicker
+          selected={dueDate}
+          onChange={(date: Date | null) => setDueDate(date)}
+        />
+      </div>
       <button onClick={addTask}>Add new Todo</button>
       <ul>
         {todos.map((todo) => (
@@ -60,8 +71,10 @@ const TodoApp = () => {
                 textDecoration: todo.completed ? "line-through" : "none",
               }}
             >
-              {todo.text}
+              {todo.text} : Due on{" "}
+              {todo.date ? todo.date.toLocaleDateString() : null}
             </span>
+
             <button onClick={() => deleteTask(todo.id)}> Delete Todo</button>
           </li>
         ))}
